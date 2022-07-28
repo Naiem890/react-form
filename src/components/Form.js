@@ -1,7 +1,8 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
 
-const Form = () => {
+const Form = ({ setReceiptTable }) => {
   const {
     register,
     handleSubmit,
@@ -10,13 +11,15 @@ const Form = () => {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => {
+  const onSubmit = (newReceipt) => {
+    setReceiptTable((receipt) => [...receipt, newReceipt]);
+    toast.success("Receipt Added Successfully");
     reset();
-    console.log(data);
+    console.log(newReceipt);
   };
 
   return (
-    <div className="bg-[#f5f5f5] py-16">
+    <div className="bg-[#f5f5f5] py-10">
       <form
         action=""
         className="max-w-xl mx-auto"
@@ -93,8 +96,8 @@ const Form = () => {
               class="btn bg-[#477340] uppercase flex flex-col w-36 h-16 border-transparent hover:border-green-600 hover:bg-white hover:text-green-600 gap-2  justify-center items-center font-medium border-2 text-white"
               type="submit"
             >
-              <span>Cancel</span>
-              <span className="text-xs font-medium">(ESC)</span>
+              <span>Submit</span>
+              <span className="text-xs font-medium">(⌘ S)</span>
             </button>
           </div>
         </div>

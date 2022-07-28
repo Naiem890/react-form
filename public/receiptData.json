@@ -1,0 +1,20 @@
+[
+  {
+    "amount": "2",
+    "date": "2022-07-29",
+    "paymentMode": "Cash",
+    "remark": "no comment"
+  },
+  {
+    "amount": "234",
+    "date": "2022-07-29",
+    "paymentMode": "Google Pay",
+    "remark": "no comment"
+  },
+  {
+    "amount": "2",
+    "date": "2022-09-29",
+    "paymentMode": "PayTM",
+    "remark": "no comment"
+  }
+]
